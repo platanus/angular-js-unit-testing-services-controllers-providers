@@ -41,11 +41,26 @@ describe('todo list service tests', function(){
       expect(todoServObj.getTask(6)).toBeNull();
     });
 
-    it('should allow me to sort the list by name', function() {
+  describe('using a list that has elements that are easy to identify when sorted',function() {
+    beforeEach(function(){
       todoServObj.addTask({
-
+        id: 104,
+        name: 'A first task ',
+        description: 'My task description '
+      });
+      todoServObj.addTask({
+        id: 106,
+        name: 'ZZZ last task ',
+        description: 'My task description '
       });
     });
+    it('should allow me to sort the list by name', function() {
+      expect(todoServObj.list[0].name[0]).not.toBe('A')
+      todoServObj.resort();
+      expect(todoServObj.list[0].name[0]).toBe('A')
+    });
+  })
+
   });
 
 });

@@ -4,6 +4,7 @@
 
     function todoListService(){
       this.list = [];
+      this.getList = this.list;
       this.addTask = addTask;
       this.getTask = getTask;
       this.removeTask = removeTask;

@@ -1,13 +1,7 @@
 angular.module('controllers',[])
   .controller('TodoListController', todoListController);
 
-  function($scope, dataSvc) {
-    $scope.saveData = function () {
-      dataSvc.save($scope.bookDetails).then(function (result) {
-        $scope.bookDetails = {};
-        $scope.bookForm.$setPristine();
-      });
-    };
-
-    $scope.numberPattern = /^\d*$/;
-  }]);
+  function todoListController(todoServ) {
+    var vm = this;
+    vm.list = todoServ.getList();
+  });

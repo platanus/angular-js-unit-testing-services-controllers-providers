@@ -14,12 +14,13 @@
         this.list.push(task);
       }
 
-      function getTask(index) {
-        return this.list[index] !== undefined ? this.list[index] : null;
+      function getTask(id) {
+        return _.findWhere(this.list, { id: id }) || null;
       }
 
-      function removeTask(index) {
-        this.list.splice(index,1);
+      function removeTask(id) {
+        var index = _.findIndex(this.list, { id: id} );
+        this.list.splice(index, 1);
       }
     }
 })();

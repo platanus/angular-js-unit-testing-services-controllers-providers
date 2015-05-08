@@ -20,7 +20,7 @@ describe('todo list service tests', function(){
     });
 
     expect(todoServObj.list.length).toBe(1);
-    expect(todoServObj.getTask(0).name).toBe('My task');
+    expect(todoServObj.getTask(763).name).toBe('My task');
   });
 
   describe('filled list', function() {
@@ -31,14 +31,20 @@ describe('todo list service tests', function(){
           name: 'My task ' + i,
           description: 'My task description ' + i
         });
-      };
+      }
     });
 
     it('should allow me to remove a task', function(){
       expect(todoServObj.list.length).toBe(10);
       todoServObj.removeTask(6);
       expect(todoServObj.list.length).toBe(9);
-      //expect(todoServObj.getTask(6)).toBeNull();
+      expect(todoServObj.getTask(6)).toBeNull();
+    });
+
+    it('should allow me to sort the list by name', function() {
+      todoServObj.addTask({
+
+      });
     });
   });
 

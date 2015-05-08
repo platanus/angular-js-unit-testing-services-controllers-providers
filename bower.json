@@ -1,0 +1,22 @@
+{
+  "name": "angular-js-unit-testing-services-controllers-providers",
+  "version": "0.0.0",
+  "homepage": "https://github.com/platanus/angular-js-unit-testing-services-controllers-providers",
+  "authors": [
+    "Jaime Bunzli <jpbunzli@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~3.8.0"
+  }
+}

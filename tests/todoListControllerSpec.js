@@ -17,9 +17,8 @@ describe('testing controllers', function(){
     module('controllers');
   });
 
-  beforeEach(inject(function($rootScope, $controller, dataSvc){
-    rootScope = $rootScope;
-    scope = $rootScope.$new();
-    mockDataSvc = dataSvc;
-    spyOn(mockDataSvc, 'save').and.callThrough();
+  beforeEach(inject(function($controller, todoServ){
+    mockTodoServ = todoServ;
+
   }));
+

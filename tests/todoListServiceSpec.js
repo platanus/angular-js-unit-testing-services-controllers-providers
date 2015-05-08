@@ -54,10 +54,16 @@ describe('todo list service tests', function(){
         description: 'My task description '
       });
     });
+
     it('should allow me to sort the list by name', function() {
       expect(todoServObj.list[0].name[0]).not.toBe('A')
       todoServObj.resort();
       expect(todoServObj.list[0].name[0]).toBe('A')
+
+      var taskA = todoServObj.getTask(0);
+      var taskB = todoServObj.getTask(1);
+      expect(todoServObj.getPosition(taskA)).toBeGreaterThan(taskB)
+
     });
   })
 

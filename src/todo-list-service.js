@@ -25,9 +25,20 @@
       }
 
       function resort(){
-        this.list = _.sortBy(this.list,function(t1,t2) {
-          return t2.name < t1.name;
-        })
+        this.list.sort(function (a, b) {
+          if (a.name > b.name) {
+            return 1;
+          }
+          if (a.name < b.name) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+        });
+      }
+
+      function getTaskByIndex() {
+        
       }
     }
 })();

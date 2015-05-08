@@ -8,6 +8,7 @@
       this.getTask = getTask;
       this.removeTask = removeTask;
       this.resort = resort;
+      this.getPosition = getPosition;
 
       //////
 
@@ -37,8 +38,8 @@
         });
       }
 
-      function getTaskByIndex() {
-        
+      function getPosition(task) {
+        return _.indexOf(this.list, task);
       }
     }
 })();
